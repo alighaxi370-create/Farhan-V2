@@ -39,13 +39,28 @@ overflow:auto;
 
 .fb-video{
 width:100%;
+height:320px;
 background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
 }
 
 .fb-video video{
 width:100%;
-display:block;
+height:100%;
+object-fit:cover;
+display:none;
 }
+
+#thumbPreview{
+width:100%;
+height:320px;
+object-fit:cover;
+display:none;
+}
+
 
 .fb-content{
 padding:16px;
