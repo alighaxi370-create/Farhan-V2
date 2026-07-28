@@ -1,34 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Facebook Login</title>
 </head>
-
 <body>
-
-<h2>Redirecting to Facebook...</h2>
 
 <script>
 
-const APP_ID="1569952951152062";
-
-const REDIRECT_URI="https://farhanv2.pages.dev/auth/callback.html";
-
-const scope=[
-"public_profile",
-"pages_show_list",
-"pages_manage_posts"
-].join(",");
-
-const url=
+window.location.href =
 "https://www.facebook.com/v23.0/dialog/oauth"+
-"?client_id="+APP_ID+
-"&redirect_uri="+encodeURIComponent(REDIRECT_URI)+
-"&response_type=code"+
-"&scope="+scope;
-
-window.location.href=url;
+"?client_id=1569952951152062"+
+"&redirect_uri="+encodeURIComponent("https://farhanv2.pages.dev/auth/callback.html")+
+"&response_type=token"+
+"&scope=public_profile";
 
 </script>
 
