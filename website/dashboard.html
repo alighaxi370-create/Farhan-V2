@@ -49,7 +49,9 @@ FB Creator Studio
 
 <div class="user">
 
-Guest
+<button id="fbLoginBtn" class="continue-btn">
+Connect Facebook
+</button>
 
 </div>
 
@@ -59,20 +61,28 @@ Guest
 
 <div class="fb-user">
 
-<img src="https://placehold.co/70x70" class="avatar">
+<img
+id="fbAvatar"
+src="https://placehold.co/70x70"
+class="avatar"
+>
 
 <div>
 
-<h2>Ali Khan</h2>
+<h2 id="fbName">
+Not Connected
+</h2>
 
-<p>Connected Successfully</p>
+<p id="fbStatus">
+Please connect Facebook
+</p>
 
 </div>
 
 </div>
 
 </section>
-
+  
 <section class="pages">
 
 <h2>My Pages</h2>
@@ -142,7 +152,31 @@ One Card
 </section>
 
 </div>
+<script>
 
+const btn=document.getElementById("fbLoginBtn");
+
+btn.onclick=()=>{
+
+window.location.href="auth/login.html";
+
+};
+
+const code=localStorage.getItem("fb_auth_code");
+
+if(code){
+
+document.getElementById("fbName").textContent="Facebook Connected";
+
+document.getElementById("fbStatus").textContent="Authorization Received";
+
+btn.textContent="Connected";
+
+btn.disabled=true;
+
+}
+
+</script>
 </body>
 
 </html>
