@@ -18,10 +18,24 @@
 <h2>Swipe Video Creator</h2>
 
 <label>Upload Video</label>
-<input type="file" id="videoInput" accept="video/*">
+
+<div class="upload-box" id="videoBox">
+    <input type="file" id="videoInput" accept="video/*" hidden>
+    <p>🎥 Drag Video Here</p>
+    <button type="button" onclick="document.getElementById('videoInput').click()">
+        Choose Video
+    </button>
+</div>
   
 <label>Upload Thumbnail</label>
-<input type="file" id="thumbInput" accept="image/*">
+
+<div class="upload-box" id="thumbBox">
+    <input type="file" id="thumbInput" accept="image/*" hidden>
+    <p>🖼 Drag Image Here</p>
+    <button type="button" onclick="document.getElementById('thumbInput').click()">
+        Choose Image
+    </button>
+</div>
 
 <label>Title</label>
 <input type="text" id="titleInput" placeholder="Enter title">
