@@ -164,6 +164,69 @@ btn.disabled=true;
 }
 
 </script>
+
+  <script>
+
+const token = localStorage.getItem("fb_access_token");
+
+if(token){
+
+fetch("https://farhan-v2-api.samongfrazsjahga.workers.dev/pages?token="+encodeURIComponent(token))
+.then(r=>r.json())
+.then(data=>{
+
+const box=document.getElementById("pagesContainer");
+
+box.innerHTML="";
+
+if(!data.data || data.data.length===0){
+
+box.innerHTML="<p>No Facebook Pages Found.</p>";
+
+return;
+
+}
+
+data.data.forEach(page=>{
+
+box.innerHTML+=`
+<div class="page-item">
+<input type="radio"
+name="page"
+value="${page.id}"
+data-token="${page.access_token}">
+<span>${page.name}</span>
+</div>
+`;
+
+});
+
+});
+
+}
+
+document.getElementById("continueBtn").onclick=function(){
+
+const selected=document.querySelector("input[name='page']:checked");
+
+if(!selected){
+
+alert("Select a Page");
+
+return;
+
+}
+
+localStorage.setItem("page_id",selected.value);
+
+localStorage.setItem("page_token",selected.dataset.token);
+
+alert("Page Selected Successfully");
+
+};
+
+</script>
+  
 </body>
 
 </html>
