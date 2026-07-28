@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Callback</title>
+</head>
 
+<body>
+
+<h2>Signing in...</h2>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const code = params.get("code");
+const error = params.get("error");
+
+if(error){
+
+alert("Facebook Login Cancelled");
+
+window.location.href="/dashboard.html";
+
+}
+
+if(code){
+
+localStorage.setItem("fb_auth_code",code);
+
+window.location.href="/dashboard.html";
+
+}else{
+
+alert("Login Failed");
+
+window.location.href="/dashboard.html";
+
+}
+
+</script>
+
+</body>
+</html>
