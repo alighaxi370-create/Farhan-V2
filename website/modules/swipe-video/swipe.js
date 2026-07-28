@@ -1,3 +1,5 @@
+const videoStatus=document.getElementById("videoStatus");
+const thumbStatus=document.getElementById("thumbStatus");
 const videoInput = document.getElementById("videoInput");
 const thumbInput = document.getElementById("thumbInput");
 const titleInput = document.getElementById("titleInput");
@@ -27,10 +29,11 @@ if (videoInput) {
 
         videoPreview.src = url;
         videoPreview.load();
-
+videoStatus.textContent = file.name;
         // Thumbnail ko video ka poster bana do
         if (thumbPreview.src) {
             videoPreview.poster = thumbPreview.src;
+            thumbStatus.textContent = file.name;
         }
 
     });
