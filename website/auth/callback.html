@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Facebook Callback</title>
@@ -13,45 +13,21 @@
 
 const params = new URLSearchParams(window.location.search);
 
-const code = params.get("code");
-const error = params.get("error");
+const token = params.get("access_token");
 
-if(error){
-    alert("Facebook Login Cancelled");
-    window.location.href="/dashboard.html";
+if(token){
+
+localStorage.setItem("fb_access_token", token);
+
+window.location.href="/dashboard.html";
+
+}else{
+
+alert("Facebook Login Failed");
+
+window.location.href="/dashboard.html";
+
 }
-
-if(!code){
-    alert("Login Failed");
-    window.location.href="/dashboard.html";
-}
-
-fetch("https://farhan-v2-api.samongfrazsjahga.workers.dev/oauth?code="+encodeURIComponent(code))
-.then(r=>r.json())
-.then(data=>{
-
-    if(data.access_token){
-
-        localStorage.setItem("fb_access_token",data.access_token);
-
-        window.location.href="/dashboard.html";
-
-    }else{
-
-        alert(JSON.stringify(data));
-
-        window.location.href="/dashboard.html";
-
-    }
-
-})
-.catch(err=>{
-
-    alert(err);
-
-    window.location.href="/dashboard.html";
-
-});
 
 </script>
 
