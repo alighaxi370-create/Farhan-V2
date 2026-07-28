@@ -381,3 +381,37 @@ cursor:pointer;
 color:#cbd5e1;
 margin:0;
 }
+/* TOP BAR */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:#111827;
+border-bottom:1px solid #374151;
+}
+
+.top-actions{
+display:flex;
+gap:12px;
+}
+
+.primary-btn,
+.secondary-btn{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+}
+
+.primary-btn{
+background:#2563eb;
+color:#fff;
+}
+
+.secondary-btn{
+background:#374151;
+color:#fff;
+}
