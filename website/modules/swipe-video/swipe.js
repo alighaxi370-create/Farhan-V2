@@ -10,67 +10,100 @@ const titlePreview = document.getElementById("titlePreview");
 const urlPreview = document.getElementById("urlPreview");
 const ctaPreview = document.getElementById("ctaPreview");
 
-if(videoInput){
 
-videoInput.addEventListener("change",()=>{
+// =========================
+// VIDEO PREVIEW
+// =========================
 
-const file=videoInput.files[0];
+if (videoInput) {
 
-if(file){
+    videoInput.addEventListener("change", () => {
 
-videoPreview.src=URL.createObjectURL(file);
+        const file = videoInput.files[0];
 
-videoPreview.style.display="block";
+        if (!file) return;
 
-}
+        const url = URL.createObjectURL(file);
 
-});
+        videoPreview.src = url;
+        videoPreview.load();
 
-}
+        // Thumbnail ko video ka poster bana do
+        if (thumbPreview.src) {
+            videoPreview.poster = thumbPreview.src;
+        }
 
-if(titleInput){
-
-titleInput.addEventListener("input",()=>{
-
-titlePreview.textContent=titleInput.value||"Video Title";
-
-});
-
-}
-
-if(urlInput){
-
-urlInput.addEventListener("input",()=>{
-
-urlPreview.textContent=urlInput.value||"example.com";
-
-});
+    });
 
 }
 
-if(ctaInput){
 
-ctaInput.addEventListener("change",()=>{
+// =========================
+// THUMBNAIL PREVIEW
+// =========================
 
-ctaPreview.textContent=ctaInput.value;
+if (thumbInput) {
 
-});
+    thumbInput.addEventListener("change", () => {
+
+        const file = thumbInput.files[0];
+
+        if (!file) return;
+
+        const url = URL.createObjectURL(file);
+
+        thumbPreview.src = url;
+
+        // Video ka poster update karo
+        videoPreview.poster = url;
+
+    });
 
 }
-if(thumbInput){
 
-thumbInput.addEventListener("change",()=>{
 
-const file = thumbInput.files[0];
+// =========================
+// TITLE
+// =========================
 
-if(file){
+if (titleInput) {
 
-thumbPreview.src = URL.createObjectURL(file);
+    titleInput.addEventListener("input", () => {
 
-thumbPreview.style.display = "block";
+        titlePreview.textContent =
+            titleInput.value || "Video Title";
+
+    });
 
 }
 
-});
+
+// =========================
+// WEBSITE URL
+// =========================
+
+if (urlInput) {
+
+    urlInput.addEventListener("input", () => {
+
+        urlPreview.textContent =
+            urlInput.value || "example.com";
+
+    });
+
+}
+
+
+// =========================
+// CTA BUTTON
+// =========================
+
+if (ctaInput) {
+
+    ctaInput.addEventListener("change", () => {
+
+        ctaPreview.textContent = ctaInput.value;
+
+    });
 
 }
