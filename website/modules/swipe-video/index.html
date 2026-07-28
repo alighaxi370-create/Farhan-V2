@@ -18,20 +18,20 @@
 <h2>Swipe Video Creator</h2>
 
 <label>Upload Video</label>
-<input type="file" accept="video/*">
-
+<input type="file" id="videoInput" accept="video/*">
+  
 <label>Upload Thumbnail</label>
-<input type="file" accept="image/*">
+<input type="file" id="thumbInput" accept="image/*">
 
 <label>Title</label>
-<input type="text" placeholder="Enter title">
+<input type="text" id="titleInput" placeholder="Enter title">
 
 <label>Website URL</label>
-<input type="url" placeholder="https://example.com">
+<input type="url" id="urlInput" placeholder="https://example.com">
 
 <label>CTA Button</label>
 
-<select>
+<select id="ctaInput">
 
 <option>Watch More</option>
 
@@ -63,7 +63,23 @@ Publish
 
 <div class="phone-preview">
 
-Preview will appear here
+<img id="thumbPreview" src="" style="width:100%;display:none;border-radius:20px 20px 0 0;">
+
+<video id="videoPreview" controls style="width:100%;display:none;"></video>
+
+<div style="padding:15px;">
+
+<h3 id="titlePreview">Video Title</h3>
+
+<p id="urlPreview">example.com</p>
+
+<button id="ctaPreview" class="fb-login-btn">
+
+Watch More
+
+</button>
+
+</div>
 
 </div>
 
