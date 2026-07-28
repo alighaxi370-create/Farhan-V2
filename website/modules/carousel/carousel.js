@@ -10,7 +10,10 @@ const urlInput = document.getElementById("urlInput");
 const ctaInput = document.getElementById("ctaInput");
 
 // Preview
-const carouselImage = document.getElementById("carouselImage");
+const img1=document.getElementById("img1");
+const img2=document.getElementById("img2");
+const img3=document.getElementById("img3");
+const img4=document.getElementById("img4");
 const titlePreview = document.getElementById("titlePreview");
 const descPreview = document.getElementById("descPreview");
 const urlPreview = document.getElementById("urlPreview");
@@ -34,27 +37,25 @@ let current = 0;
 // IMAGE UPLOAD
 // =========================
 
-if (imageInput) {
+if(imageInput){
 
-imageInput.addEventListener("change", () => {
+imageInput.addEventListener("change",()=>{
 
-images = [];
+const files=[...imageInput.files];
 
-const files = Array.from(imageInput.files);
+imageStatus.textContent=files.length+" Images";
 
-if (!files.length) return;
+cardStatus.textContent=files.length+" Cards";
 
-files.forEach(file => {
-images.push(URL.createObjectURL(file));
+const previews=[img1,img2,img3,img4];
+
+previews.forEach(img=>img.src="");
+
+files.slice(0,4).forEach((file,index)=>{
+
+previews[index].src=URL.createObjectURL(file);
+
 });
-
-current = 0;
-
-carouselImage.src = images[0];
-
-imageStatus.textContent = files.length + " Images";
-
-cardStatus.textContent = files.length + " Cards";
 
 saveDraft();
 
