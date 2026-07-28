@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swipe Video</title>
+
+<title>Swipe Video Creator</title>
 
 <link rel="stylesheet" href="../../assets/css/style.css">
 <link rel="stylesheet" href="swipe.css">
@@ -11,154 +13,216 @@
 </head>
 
 <body>
+
 <div class="topbar">
 
-<h2>Swipe Video Creator</h2>
+<div class="logo">
+<h2>Farhan V2</h2>
+</div>
 
 <div class="top-actions">
 
-<button class="secondary-btn">Save Draft</button>
+<button id="draftBtn" class="secondary-btn">
+💾 Save Draft
+</button>
 
-<button class="primary-btn">Preview</button>
+<button id="publishBtn" class="primary-btn">
+🚀 Publish
+</button>
 
 </div>
 
 </div>
+
 <div class="editor">
-    
+
+<!-- LEFT PANEL -->
+
+<div class="left-panel">
+
 <div class="editor-info">
 
 <div class="info-box">
 <h3>Video</h3>
-<p id="videoStatus">Not Selected</p>
+<p id="videoStatus">No Video</p>
 </div>
 
 <div class="info-box">
 <h3>Thumbnail</h3>
-<p id="thumbStatus">Not Selected</p>
+<p id="thumbStatus">No Image</p>
 </div>
 
 </div>
-    
-<div class="left-panel">
 
 <h2>Swipe Video Creator</h2>
 
 <label>Upload Video</label>
 
-<div class="upload-box" id="videoBox">
-    <input type="file" id="videoInput" accept="video/*" hidden>
-    <p>🎥 Drag Video Here</p>
-    <button type="button" onclick="document.getElementById('videoInput').click()">
-        Choose Video
-    </button>
+<div class="upload-box">
+
+<input
+type="file"
+id="videoInput"
+accept="video/*"
+hidden>
+
+<p>🎥 Drag Video Here</p>
+
+<button
+type="button"
+onclick="document.getElementById('videoInput').click()">
+
+Choose Video
+
+</button>
+
 </div>
-  
+
 <label>Upload Thumbnail</label>
 
-<div class="upload-box" id="thumbBox">
-    <input type="file" id="thumbInput" accept="image/*" hidden>
-    <p>🖼 Drag Image Here</p>
-    <button type="button" onclick="document.getElementById('thumbInput').click()">
-        Choose Image
-    </button>
+<div class="upload-box">
+
+<input
+type="file"
+id="thumbInput"
+accept="image/*"
+hidden>
+
+<p>🖼 Drag Thumbnail Here</p>
+
+<button
+type="button"
+onclick="document.getElementById('thumbInput').click()">
+
+Choose Image
+
+</button>
+
 </div>
 
-<label>Title</label>
-<input type="text" id="titleInput" placeholder="Enter title">
+<label>Video Title</label>
+
+<input
+type="text"
+id="titleInput"
+placeholder="Write amazing title...">
 
 <label>Website URL</label>
-<input type="url" id="urlInput" placeholder="https://example.com">
 
-<label>CTA Button</label>
+<input
+type="url"
+id="urlInput"
+placeholder="https://example.com">
+
+<label>Call To Action</label>
 
 <select id="ctaInput">
 
 <option>Watch More</option>
-
 <option>Learn More</option>
-
 <option>Shop Now</option>
-
 <option>Visit Website</option>
+<option>Download</option>
 
 </select>
 
-<button class="fb-login-btn">
-
-Save Draft
-
-</button>
-
-<button class="fb-login-btn">
-
-Publish
-
-</button>
-
 </div>
 
-<div class="right-panel">
+<!-- RIGHT PANEL -->
 
+<div class="right-panel">
+    
 <h2>Mobile Preview</h2>
 
 <div class="phone-frame">
 
-<div class="fb-post">
+    <div class="fb-post">
 
- <div class="fb-header">
+        <!-- Facebook Header -->
 
-    <div class="fb-avatar">F</div>
+        <div class="fb-header">
 
-    <div class="fb-page">
+            <div class="fb-avatar">
+                F
+            </div>
 
-        <strong id="pageName">Farhan V2</strong>
+            <div class="fb-page">
 
-        <small>Sponsored</small>
+                <strong id="pageName">
+                    Farhan V2
+                </strong>
+
+                <small>
+                    Sponsored
+                </small>
+
+            </div>
+
+        </div>
+
+        <!-- Video Area -->
+
+        <div class="fb-video">
+
+            <img
+                id="thumbPreview"
+                hidden>
+
+            <video
+                id="videoPreview"
+                controls>
+            </video>
+
+        </div>
+
+        <!-- Content -->
+
+        <div class="fb-content">
+
+            <h3
+                class="fb-title"
+                id="titlePreview">
+
+                Video Title
+
+            </h3>
+
+            <p
+                class="fb-domain"
+                id="urlPreview">
+
+                example.com
+
+            </p>
+
+            <button
+                class="fb-btn"
+                id="ctaPreview">
+
+                Watch More
+
+            </button>
+
+            <div class="fb-actions">
+
+                <span>👍 Like</span>
+
+                <span>💬 Comment</span>
+
+                <span>↗ Share</span>
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
-    
-<div class="fb-video">
-
-<img id="thumbPreview">
-
-<video id="videoPreview" controls></video>
-
-</div>
-    
-<div class="fb-actions">
-
-    <span>👍 Like</span>
-
-    <span>💬 Comment</span>
-
-    <span>↗ Share</span>
-
-</div>
-
-<h3 class="fb-title" id="titlePreview">
-Video Title
-</h3>
-
-<p class="fb-domain" id="urlPreview">
-example.com
-</p>
-
-<a class="fb-btn" id="ctaPreview">
-Watch More
-</a>
 
 </div>
 
 </div>
 
-</div>
-
-</div>
-
-</div>
 <script src="swipe.js"></script>
 
 </body>
