@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Login | Farhan V2</title>
-
-<link rel="stylesheet" href="../assets/css/style.css">
-
+<title>Facebook Login</title>
 </head>
 
 <body>
 
-<div class="login-container">
+<h2>Redirecting to Facebook...</h2>
 
-<div class="login-card">
+<script>
 
-<h1>Farhan V2</h1>
+const APP_ID="1569952951152062";
 
-<p>
-Connect your Facebook account to continue.
-</p>
+const REDIRECT_URI="https://farhanv2.pages.dev/auth/callback.html";
 
-<button class="fb-login-btn" onclick="location.href='../pages/my-pages.html'">
-Continue with Facebook
-</button>
+const scope=[
+"public_profile",
+"pages_show_list",
+"pages_manage_posts"
+].join(",");
 
-</div>
+const url=
+"https://www.facebook.com/v23.0/dialog/oauth"+
+"?client_id="+APP_ID+
+"&redirect_uri="+encodeURIComponent(REDIRECT_URI)+
+"&response_type=code"+
+"&scope="+scope;
 
-</div>
+window.location.href=url;
+
+</script>
 
 </body>
-
 </html>
