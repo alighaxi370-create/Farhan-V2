@@ -67,3 +67,108 @@ transition:.3s;
 transform:translateY(-8px);
 background:#334155;
 }
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:250px;
+height:100vh;
+background:#111827;
+padding:25px;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+margin-bottom:40px;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar ul li{
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active{
+background:#2563eb;
+}
+
+.main{
+margin-left:250px;
+padding:30px;
+}
+
+.main header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+background:none;
+padding:0;
+}
+
+.connect{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+margin-bottom:30px;
+}
+
+.connect button{
+background:#2563eb;
+border:none;
+padding:14px 25px;
+color:#fff;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.pages{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+margin-bottom:30px;
+}
+
+.page-box{
+margin-top:20px;
+padding:20px;
+background:#0f172a;
+border-radius:10px;
+}
+
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.tool{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.3s;
+cursor:pointer;
+}
+
+.tool:hover{
+background:#2563eb;
+transform:translateY(-6px);
+}
+
+.tool h3{
+margin-top:15px;
+}
