@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Card Builder</title>
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="onecard.css">
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo">
+
+<h2>Farhan V2</h2>
+
+</div>
+
+<div class="top-actions">
+
+<button id="draftBtn" class="secondary-btn">
+
+💾 Save Draft
+
+</button>
+
+<button id="publishBtn" class="primary-btn">
+
+🚀 Publish
+
+</button>
+
+</div>
+
+</div>
+
+<div class="editor">
+
+<!-- LEFT PANEL -->
+
+<div class="left-panel">
+
+<h2>One Card Builder</h2>
+
+<label>Upload Image</label>
+
+<div class="upload-box">
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+hidden>
+
+<button
+type="button"
+onclick="document.getElementById('imageInput').click()">
+
+Choose Image
+
+</button>
+
+</div>
+
+<label>Title</label>
+
+<input
+type="text"
+id="titleInput"
+placeholder="Amazing Product">
+
+<label>Description</label>
+
+<textarea
+id="descInput"
+rows="4"
+placeholder="Write description..."></textarea>
+
+<label>Display URL (Preview)</label>
+
+<input
+type="text"
+id="displayUrlInput"
+placeholder="mybrand.com">
+
+<label>Destination URL</label>
+
+<input
+type="url"
+id="websiteUrlInput"
+placeholder="https://example.com">
+
+<label>CTA Button</label>
+
+<select id="ctaInput">
+
+<option>Watch More</option>
+
+<option>Learn More</option>
+
+<option>Shop Now</option>
+
+<option>Visit Website</option>
+
+<option>Download</option>
+
+</select>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="right-panel">
+  <h2>Facebook Preview</h2>
+
+<div class="phone-frame">
+
+<div class="fb-post">
+
+<!-- Facebook Header -->
+
+<div class="fb-header">
+
+<div class="fb-avatar">
+F
+</div>
+
+<div class="fb-page">
+
+<strong>Farhan V2</strong>
+
+<small>Sponsored</small>
+
+</div>
+
+</div>
+
+<!-- Image -->
+
+<div class="fb-image">
+
+<img
+id="previewImage"
+src=""
+alt="Preview Image">
+
+</div>
+
+<!-- Content -->
+
+<div class="fb-content">
+
+<h3
+id="previewTitle"
+class="fb-title">
+
+Amazing Product
+
+</h3>
+
+<p
+id="previewDesc"
+class="fb-description">
+
+Your description will appear here...
+
+</p>
+
+<p
+id="previewDisplayUrl"
+class="fb-domain">
+
+mybrand.com
+
+</p>
+
+<a
+id="previewButton"
+class="fb-btn"
+href="#">
+
+Watch More
+
+</a>
+
+</div>
+
+<!-- Facebook Actions -->
+
+<div class="fb-actions">
+
+<span>👍 Like</span>
+
+<span>💬 Comment</span>
+
+<span>↗ Share</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="onecard.js"></script>
+
+</body>
+</html>
