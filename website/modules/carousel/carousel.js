@@ -1,241 +1,238 @@
 // =========================
-// FARHAN V2 - CAROUSEL
+// FARHAN V2 - 2 CARD CAROUSEL
 // =========================
 
-// Inputs
-const imageInput = document.getElementById("imageInput");
-const titleInput = document.getElementById("titleInput");
-const descInput = document.getElementById("descInput");
-const urlInput = document.getElementById("urlInput");
-const ctaInput = document.getElementById("ctaInput");
+// ---------- Card 1 ----------
 
-// Preview
-const img1=document.getElementById("img1");
-const img2=document.getElementById("img2");
-const img3=document.getElementById("img3");
-const img4=document.getElementById("img4");
-const titlePreview = document.getElementById("titlePreview");
-const descPreview = document.getElementById("descPreview");
-const urlPreview = document.getElementById("urlPreview");
-const ctaPreview = document.getElementById("ctaPreview");
+const image1 = document.getElementById("image1");
+const title1 = document.getElementById("title1");
+const url1 = document.getElementById("url1");
+const cta1 = document.getElementById("cta1");
 
-// Status
-const imageStatus = document.getElementById("imageStatus");
-const cardStatus = document.getElementById("cardStatus");
+const previewImg1 = document.getElementById("previewImg1");
+const previewTitle1 = document.getElementById("previewTitle1");
+const previewUrl1 = document.getElementById("previewUrl1");
+const previewCta1 = document.getElementById("previewCta1");
 
-// Buttons
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
+
+// ---------- Card 2 ----------
+
+const image2 = document.getElementById("image2");
+const title2 = document.getElementById("title2");
+const url2 = document.getElementById("url2");
+const cta2 = document.getElementById("cta2");
+
+const previewImg2 = document.getElementById("previewImg2");
+const previewTitle2 = document.getElementById("previewTitle2");
+const previewUrl2 = document.getElementById("previewUrl2");
+const previewCta2 = document.getElementById("previewCta2");
+
+
+// ---------- Buttons ----------
+
 const draftBtn = document.getElementById("draftBtn");
 const publishBtn = document.getElementById("publishBtn");
 
-// Images
-let images = [];
-let current = 0;
 
 // =========================
-// IMAGE UPLOAD
+// CARD 1 IMAGE
 // =========================
 
-if(imageInput){
+image1.addEventListener("change", () => {
 
-imageInput.addEventListener("change",()=>{
+const file = image1.files[0];
 
-const files=[...imageInput.files];
+if(!file) return;
 
-imageStatus.textContent=files.length+" Images";
-
-cardStatus.textContent=files.length+" Cards";
-
-const previews=[img1,img2,img3,img4];
-
-previews.forEach(img=>img.src="");
-
-files.slice(0,4).forEach((file,index)=>{
-
-previews[index].src=URL.createObjectURL(file);
-
-});
+previewImg1.src = URL.createObjectURL(file);
 
 saveDraft();
 
 });
 
-}
 
 // =========================
-// NEXT
+// CARD 2 IMAGE
 // =========================
 
-if (nextBtn) {
+image2.addEventListener("change", () => {
 
-nextBtn.onclick = () => {
+const file = image2.files[0];
 
-if (!images.length) return;
+if(!file) return;
 
-current++;
-
-if (current >= images.length)
-current = 0;
-
-carouselImage.src = images[current];
-
-};
-
-}
-
-// =========================
-// PREVIOUS
-// =========================
-
-if (prevBtn) {
-
-prevBtn.onclick = () => {
-
-if (!images.length) return;
-
-current--;
-
-if (current < 0)
-current = images.length - 1;
-
-carouselImage.src = images[current];
-
-};
-
-}
-
-// =========================
-// TITLE
-// =========================
-
-titleInput.addEventListener("input", () => {
-
-titlePreview.textContent =
-titleInput.value || "Card Title";
+previewImg2.src = URL.createObjectURL(file);
 
 saveDraft();
 
 });
 
+
 // =========================
-// DESCRIPTION
+// CARD 1 TITLE
 // =========================
 
-descInput.addEventListener("input", () => {
+title1.addEventListener("input",()=>{
 
-descPreview.textContent =
-descInput.value || "Description will appear here...";
+previewTitle1.textContent =
+title1.value || "Card 1 Title";
 
 saveDraft();
 
 });
 
+
 // =========================
-// URL
+// CARD 2 TITLE
 // =========================
 
-urlInput.addEventListener("input", () => {
+title2.addEventListener("input",()=>{
 
-urlPreview.textContent =
-urlInput.value || "example.com";
+previewTitle2.textContent =
+title2.value || "Card 2 Title";
 
 saveDraft();
 
 });
 
+
 // =========================
-// CTA
+// CARD 1 URL
 // =========================
 
-ctaInput.addEventListener("change", () => {
+url1.addEventListener("input",()=>{
 
-ctaPreview.textContent =
-ctaInput.value;
+previewUrl1.textContent =
+url1.value || "example1.com";
 
 saveDraft();
 
 });
+
+
+// =========================
+// CARD 2 URL
+// =========================
+
+url2.addEventListener("input",()=>{
+
+previewUrl2.textContent =
+url2.value || "example2.com";
+
+saveDraft();
+
+});
+
+
+// =========================
+// CARD 1 CTA
+// =========================
+
+cta1.addEventListener("change",()=>{
+
+previewCta1.textContent = cta1.value;
+
+saveDraft();
+
+});
+
+
+// =========================
+// CARD 2 CTA
+// =========================
+
+cta2.addEventListener("change",()=>{
+
+previewCta2.textContent = cta2.value;
+
+saveDraft();
+
+});
+
 
 // =========================
 // SAVE DRAFT
 // =========================
 
-function saveDraft() {
+function saveDraft(){
 
-const draft = {
+const draft={
 
-title: titleInput.value,
+title1:title1.value,
+url1:url1.value,
+cta1:cta1.value,
 
-description: descInput.value,
-
-url: urlInput.value,
-
-cta: ctaInput.value
+title2:title2.value,
+url2:url2.value,
+cta2:cta2.value
 
 };
 
 localStorage.setItem(
-"carouselDraft",
+"carousel2Draft",
 JSON.stringify(draft)
 );
 
 }
 
+
 // =========================
 // LOAD DRAFT
 // =========================
 
-window.onload = () => {
+window.addEventListener("load",()=>{
 
-const draft =
-JSON.parse(localStorage.getItem("carouselDraft"));
+const draft=JSON.parse(
+localStorage.getItem("carousel2Draft")
+);
 
-if (!draft) return;
+if(!draft) return;
 
-titleInput.value = draft.title || "";
-descInput.value = draft.description || "";
-urlInput.value = draft.url || "";
-ctaInput.value = draft.cta || "Watch More";
+title1.value=draft.title1||"";
+url1.value=draft.url1||"";
+cta1.value=draft.cta1||"Watch More";
 
-titlePreview.textContent =
-draft.title || "Card Title";
+title2.value=draft.title2||"";
+url2.value=draft.url2||"";
+cta2.value=draft.cta2||"Watch More";
 
-descPreview.textContent =
-draft.description || "Description will appear here...";
 
-urlPreview.textContent =
-draft.url || "example.com";
+previewTitle1.textContent=
+draft.title1||"Card 1 Title";
 
-ctaPreview.textContent =
-draft.cta || "Watch More";
+previewUrl1.textContent=
+draft.url1||"example1.com";
 
-};
+previewCta1.textContent=
+draft.cta1||"Watch More";
+
+
+previewTitle2.textContent=
+draft.title2||"Card 2 Title";
+
+previewUrl2.textContent=
+draft.url2||"example2.com";
+
+previewCta2.textContent=
+draft.cta2||"Watch More";
+
+});
+
 
 // =========================
 // BUTTONS
 // =========================
 
-if (draftBtn) {
-
-draftBtn.onclick = () => {
+draftBtn.addEventListener("click",()=>{
 
 saveDraft();
 
-alert("Carousel Draft Saved");
+alert("Draft Saved");
 
-};
+});
 
-}
+publishBtn.addEventListener("click",()=>{
 
-if (publishBtn) {
+alert("Frontend Ready\n\nNext Step: Facebook Connect + Publish");
 
-publishBtn.onclick = () => {
-
-alert(
-"Frontend Complete ✅\n\nNext Step:\nFacebook Connect + Publish"
-);
-
-};
-
-}
+});
