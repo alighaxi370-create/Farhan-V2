@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Carousel Creator</title>
+<title>Facebook Carousel Builder</title>
 
 <link rel="stylesheet" href="../../assets/css/style.css">
 <link rel="stylesheet" href="carousel.css">
@@ -18,17 +18,23 @@
 <div class="topbar">
 
 <div class="logo">
+
 <h2>Farhan V2</h2>
+
 </div>
 
 <div class="top-actions">
 
 <button id="draftBtn" class="secondary-btn">
+
 💾 Save Draft
+
 </button>
 
 <button id="publishBtn" class="primary-btn">
+
 🚀 Publish
+
 </button>
 
 </div>
@@ -41,81 +47,53 @@
 
 <div class="left-panel">
 
-<div class="editor-info">
+<h2>Facebook Carousel</h2>
 
-<div class="info-box">
+<!-- ========================= -->
 
-<h3>Images</h3>
+<h3 class="card-heading">
 
-<p id="imageStatus">
-0 Selected
-</p>
+Card 1
 
-</div>
+</h3>
 
-<div class="info-box">
-
-<h3>Cards</h3>
-
-<p id="cardStatus">
-1 Card
-</p>
-
-</div>
-
-</div>
-
-<h2>Carousel Creator</h2>
-
-<label>Upload Images</label>
+<label>Image</label>
 
 <div class="upload-box">
 
 <input
 type="file"
-id="imageInput"
+id="image1"
 accept="image/*"
-multiple
 hidden>
-
-<p>
-🖼 Drag Images Here
-</p>
 
 <button
 type="button"
-onclick="document.getElementById('imageInput').click()">
+onclick="document.getElementById('image1').click()">
 
-Choose Images
+Choose Image
 
 </button>
 
 </div>
 
-<label>Card Title</label>
+<label>Title</label>
 
 <input
 type="text"
-id="titleInput"
-placeholder="Enter title">
+id="title1"
+placeholder="Card 1 Title">
 
-<label>Description</label>
-
-<textarea
-id="descInput"
-placeholder="Write description..."
-rows="4"></textarea>
-
-<label>Website URL</label>
+<label>Website</label>
 
 <input
 type="url"
-id="urlInput"
+id="url1"
 placeholder="https://example.com">
 
-<label>CTA Button</label>
+<label>CTA</label>
 
-<select id="ctaInput">
+<select id="cta1">
 
 <option>Watch More</option>
 
@@ -125,7 +103,63 @@ placeholder="https://example.com">
 
 <option>Visit Website</option>
 
-<option>Download</option>
+</select>
+
+<hr>
+
+<!-- ========================= -->
+
+<h3 class="card-heading">
+
+Card 2
+
+</h3>
+
+<label>Image</label>
+
+<div class="upload-box">
+
+<input
+type="file"
+id="image2"
+accept="image/*"
+hidden>
+
+<button
+type="button"
+onclick="document.getElementById('image2').click()">
+
+Choose Image
+
+</button>
+
+</div>
+
+<label>Title</label>
+
+<input
+type="text"
+id="title2"
+placeholder="Card 2 Title">
+
+<label>Website</label>
+
+<input
+type="url"
+id="url2"
+placeholder="https://example.com">
+
+<label>CTA</label>
+
+<select id="cta2">
+
+<option>Watch More</option>
+
+<option>Learn More</option>
+
+<option>Shop Now</option>
+
+<option>Visit Website</option>
 
 </select>
 
@@ -134,29 +168,23 @@ placeholder="https://example.com">
 <!-- RIGHT PANEL -->
 
 <div class="right-panel">
-  <h2>Mobile Preview</h2>
+  <h2>Facebook Preview</h2>
 
 <div class="phone-frame">
 
 <div class="fb-post">
 
-<!-- Facebook Header -->
+<!-- Header -->
 
 <div class="fb-header">
 
-<div class="fb-avatar">
-F
-</div>
+<div class="fb-avatar">F</div>
 
 <div class="fb-page">
 
-<strong>
-Farhan V2
-</strong>
+<strong>Farhan V2</strong>
 
-<small>
-Sponsored
-</small>
+<small>Sponsored</small>
 
 </div>
 
@@ -164,69 +192,59 @@ Sponsored
 
 <!-- Carousel -->
 
-<div class="carousel-preview" id="carouselPreview">
+<div class="carousel-wrapper">
+
+<!-- CARD 1 -->
 
 <div class="carousel-card">
 
-<img id="img1" src="" alt="">
+<img id="previewImg1" src="">
 
-</div>
+<div class="card-info">
 
-<div class="carousel-card">
+<h4 id="previewTitle1">
+Card 1 Title
+</h4>
 
-<img id="img2" src="" alt="">
-
-</div>
-
-<div class="carousel-card">
-
-<img id="img3" src="" alt="">
-
-</div>
-
-<div class="carousel-card">
-
-<img id="img4" src="" alt="">
-
-</div>
-
-</div>
-
-<!-- Content -->
-
-<div class="fb-content">
-
-<h3
-id="titlePreview"
-class="fb-title">
-
-Card Title
-
-</h3>
-
-<p
-id="descPreview"
-class="fb-desc">
-
-Description will appear here...
-
+<p id="previewUrl1">
+example1.com
 </p>
 
-<p
-id="urlPreview"
-class="fb-domain">
-
-example.com
-
-</p>
-
-<button
-id="ctaPreview"
-class="fb-btn">
-
+<button id="previewCta1">
 Watch More
-
 </button>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="carousel-card">
+
+<img id="previewImg2" src="">
+
+<div class="card-info">
+
+<h4 id="previewTitle2">
+Card 2 Title
+</h4>
+
+<p id="previewUrl2">
+example2.com
+</p>
+
+<button id="previewCta2">
+Learn More
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Facebook Actions -->
 
 <div class="fb-actions">
 
@@ -235,8 +253,6 @@ Watch More
 <span>💬 Comment</span>
 
 <span>↗ Share</span>
-
-</div>
 
 </div>
 
