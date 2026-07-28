@@ -133,3 +133,26 @@ cursor:pointer;
 .fb-actions span:hover{
 color:#1877f2;
 }
+.editor-info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-bottom:25px;
+}
+
+.info-box{
+background:#0f172a;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+.info-box h3{
+font-size:15px;
+margin-bottom:8px;
+}
+
+.info-box p{
+font-size:13px;
+color:#94a3b8;
+}
