@@ -8,12 +8,22 @@
 
 <script>
 
-window.location.href =
+const APP_ID="1569952951152062";
+
+const REDIRECT_URI="https://farhan-v2-api.samongfrazsjahga.workers.dev/oauth";
+
+const scope=[
+"public_profile",
+"pages_show_list",
+"pages_manage_posts"
+].join(",");
+
+window.location.href=
 "https://www.facebook.com/v23.0/dialog/oauth"+
-"?client_id=1569952951152062"+
-"&redirect_uri="+encodeURIComponent("https://farhanv2.pages.dev/auth/callback.html")+
-"&response_type=token"+
-"&scope=public_profile";
+"?client_id="+APP_ID+
+"&redirect_uri="+encodeURIComponent(REDIRECT_URI)+
+"&response_type=code"+
+"&scope="+scope;
 
 </script>
 
