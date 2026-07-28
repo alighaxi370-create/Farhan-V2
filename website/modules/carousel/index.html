@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carousel Creator</title>
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="carousel.css">
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="logo">
+<h2>Farhan V2</h2>
+</div>
+
+<div class="top-actions">
+
+<button id="draftBtn" class="secondary-btn">
+💾 Save Draft
+</button>
+
+<button id="publishBtn" class="primary-btn">
+🚀 Publish
+</button>
+
+</div>
+
+</div>
+
+<div class="editor">
+
+<!-- LEFT PANEL -->
+
+<div class="left-panel">
+
+<div class="editor-info">
+
+<div class="info-box">
+
+<h3>Images</h3>
+
+<p id="imageStatus">
+0 Selected
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h3>Cards</h3>
+
+<p id="cardStatus">
+1 Card
+</p>
+
+</div>
+
+</div>
+
+<h2>Carousel Creator</h2>
+
+<label>Upload Images</label>
+
+<div class="upload-box">
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+multiple
+hidden>
+
+<p>
+🖼 Drag Images Here
+</p>
+
+<button
+type="button"
+onclick="document.getElementById('imageInput').click()">
+
+Choose Images
+
+</button>
+
+</div>
+
+<label>Card Title</label>
+
+<input
+type="text"
+id="titleInput"
+placeholder="Enter title">
+
+<label>Description</label>
+
+<textarea
+id="descInput"
+placeholder="Write description..."
+rows="4"></textarea>
+
+<label>Website URL</label>
+
+<input
+type="url"
+id="urlInput"
+placeholder="https://example.com">
+
+<label>CTA Button</label>
+
+<select id="ctaInput">
+
+<option>Watch More</option>
+
+<option>Learn More</option>
+
+<option>Shop Now</option>
+
+<option>Visit Website</option>
+
+<option>Download</option>
+
+</select>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="right-panel">
+  <h2>Mobile Preview</h2>
+
+<div class="phone-frame">
+
+<div class="fb-post">
+
+<!-- Facebook Header -->
+
+<div class="fb-header">
+
+<div class="fb-avatar">
+F
+</div>
+
+<div class="fb-page">
+
+<strong>
+Farhan V2
+</strong>
+
+<small>
+Sponsored
+</small>
+
+</div>
+
+</div>
+
+<!-- Carousel -->
+
+<div class="carousel-preview">
+
+<button class="nav-btn left" id="prevBtn">
+❮
+</button>
+
+<img
+id="carouselImage"
+src=""
+alt="Preview">
+
+<button class="nav-btn right" id="nextBtn">
+❯
+</button>
+
+</div>
+
+<!-- Content -->
+
+<div class="fb-content">
+
+<h3
+id="titlePreview"
+class="fb-title">
+
+Card Title
+
+</h3>
+
+<p
+id="descPreview"
+class="fb-desc">
+
+Description will appear here...
+
+</p>
+
+<p
+id="urlPreview"
+class="fb-domain">
+
+example.com
+
+</p>
+
+<button
+id="ctaPreview"
+class="fb-btn">
+
+Watch More
+
+</button>
+
+<div class="fb-actions">
+
+<span>👍 Like</span>
+
+<span>💬 Comment</span>
+
+<span>↗ Share</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="carousel.js"></script>
+
+</body>
+</html>
