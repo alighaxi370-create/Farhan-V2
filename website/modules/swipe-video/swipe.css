@@ -114,3 +114,21 @@ font-size:15px;
 color:#65676b;
 font-size:12px;
 }
+.fb-actions{
+display:flex;
+justify-content:space-around;
+padding:14px;
+border-top:1px solid #e5e7eb;
+margin-top:15px;
+font-size:14px;
+color:#65676b;
+font-weight:600;
+}
+
+.fb-actions span{
+cursor:pointer;
+}
+
+.fb-actions span:hover{
+color:#1877f2;
+}
