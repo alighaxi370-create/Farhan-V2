@@ -5,6 +5,7 @@ const urlInput = document.getElementById("urlInput");
 const ctaInput = document.getElementById("ctaInput");
 
 const videoPreview = document.getElementById("videoPreview");
+const thumbPreview = document.getElementById("thumbPreview");
 const titlePreview = document.getElementById("titlePreview");
 const urlPreview = document.getElementById("urlPreview");
 const ctaPreview = document.getElementById("ctaPreview");
@@ -52,6 +53,23 @@ if(ctaInput){
 ctaInput.addEventListener("change",()=>{
 
 ctaPreview.textContent=ctaInput.value;
+
+});
+
+}
+if(thumbInput){
+
+thumbInput.addEventListener("change",()=>{
+
+const file = thumbInput.files[0];
+
+if(file){
+
+thumbPreview.src = URL.createObjectURL(file);
+
+thumbPreview.style.display = "block";
+
+}
 
 });
 
