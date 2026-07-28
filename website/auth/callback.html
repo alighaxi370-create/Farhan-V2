@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Facebook Callback</title>
 </head>
 
@@ -18,26 +17,41 @@ const code = params.get("code");
 const error = params.get("error");
 
 if(error){
-
-alert("Facebook Login Cancelled");
-
-window.location.href="/dashboard.html";
-
+    alert("Facebook Login Cancelled");
+    window.location.href="/dashboard.html";
 }
 
-if(code){
-
-localStorage.setItem("fb_auth_code",code);
-
-window.location.href="/dashboard.html";
-
-}else{
-
-alert("Login Failed");
-
-window.location.href="/dashboard.html";
-
+if(!code){
+    alert("Login Failed");
+    window.location.href="/dashboard.html";
 }
+
+fetch("https://farhan-v2-api.samongfrazsjahga.workers.dev/oauth?code="+encodeURIComponent(code))
+.then(r=>r.json())
+.then(data=>{
+
+    if(data.access_token){
+
+        localStorage.setItem("fb_access_token",data.access_token);
+
+        window.location.href="/dashboard.html";
+
+    }else{
+
+        alert(JSON.stringify(data));
+
+        window.location.href="/dashboard.html";
+
+    }
+
+})
+.catch(err=>{
+
+    alert(err);
+
+    window.location.href="/dashboard.html";
+
+});
 
 </script>
 
